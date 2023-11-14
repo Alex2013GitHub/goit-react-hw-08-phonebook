@@ -1,17 +1,69 @@
-import React from 'react';
-import ContactForm from './ContactForm/ContactForm';
-import Filter from './Filter/Filter';
-import ContactList from './ContactList/ContactList';
-import { Container } from './Container/Container.styled';
+import React, { Suspense, lazy, useEffect } from 'react';
+import RestictedRoute from './Routes/RestictedRoute';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectAuthIsLoading } from 'redux/auth/selectors';
+import { refreshThunk } from 'redux/auth/operations';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import Loader from './Loader/Loader';
+import PrivateRoute from './Routes/PrivateRoutes';
+import Navigation from './Navigation/Navigation';
+
+const Home = lazy(() => import('pages/Home/Home'));
+const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
+const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
+const ContactsPage = lazy(() => import('pages/ContactsPage/ContactsPage'));
+
+const appRoutes = [
+  { path: '/', element: <Home /> },
+  {
+    path: '/register',
+    element: (
+      <RestictedRoute>
+        <RegisterPage />
+      </RestictedRoute>
+    ),
+  },
+  {
+    path: '/login',
+    element: (
+      <RestictedRoute>
+        <LoginPage />
+      </RestictedRoute>
+    ),
+  },
+  {
+    path: '/contacts',
+    element: (
+      <PrivateRoute>
+        <ContactsPage />
+      </PrivateRoute>
+    ),
+  },
+];
 
 export const App = () => {
+  const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectAuthIsLoading);
+
+  useEffect(() => {
+    dispatch(refreshThunk());
+  }, [dispatch]);
   return (
-    <Container>
-      <h1>Phonebook</h1>
-      <ContactForm />
-      <h2>Contacts</h2>
-      <Filter />
-      <ContactList />
-    </Container>
+    <>
+      <Navigation />
+      {isRefreshing ? (
+        <Loader />
+      ) : (
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            {appRoutes.map(({ path, element }) => (
+              <Route key={path} path={path} element={element} />
+            ))}
+
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </Suspense>
+      )}
+    </>
   );
 };

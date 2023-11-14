@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import { registerThunk } from 'redux/auth/operations';
 
 const { useDispatch } = require('react-redux');
 const { StyledRegister } = require('./Register.styled');

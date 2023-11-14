@@ -7,7 +7,7 @@ import {
   selectorContactsError,
   selectorContactsFilter,
   selectorContactsIsLoading,
-} from 'redux/selector';
+} from 'redux/contacts/contacts/selector';
 import Loader from 'components/Loader/Loader';
 
 const ContactList = () => {
