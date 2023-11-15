@@ -1,11 +1,20 @@
-import { ColorRing } from 'react-loader-spinner';
-import { Container } from './Loader.styled';
+import { Circles } from 'react-loader-spinner';
+
+import { StyledLoader } from './Loader.styled';
 
 const Loader = () => {
   return (
-    <Container>
-      <ColorRing height="100" width="100" />
-    </Container>
+    <StyledLoader>
+      <Circles
+        height="80"
+        width="80"
+        color="#4fa94d"
+        ariaLabel="circles-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
+      />
+    </StyledLoader>
   );
 };
 

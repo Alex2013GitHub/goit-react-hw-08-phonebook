@@ -1,50 +1,65 @@
+import React from 'react';
 import { useForm } from 'react-hook-form';
-import { loginThunk } from 'redux/auth/operations';
+import { useDispatch } from 'react-redux';
+import { registerThunk } from 'redux/auth/authOperations';
 
-const { useDispatch } = require('react-redux');
-const { StyledLogin } = require('./Login.styled');
+import { StyledRegisterPage } from './RegisterPage.styled';
 
-const Login = () => {
+const RegisterPage = () => {
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
+
   const dispatch = useDispatch();
 
   const onSubmit = data => {
-    dispatch(loginThunk(data));
+    dispatch(registerThunk(data));
     reset();
   };
+
   return (
-    <StyledLogin>
+    <StyledRegisterPage>
       <form onSubmit={handleSubmit(onSubmit)} className="form">
         <label className="label">
-          <span className="title">Email:</span>
+          <span>Email:</span>
           <input
             {...register('email', { required: true })}
             type="email"
+            name="email"
             className="input"
           />
           {errors.email && <span>This field is required</span>}
         </label>
         <label className="label">
-          <span className="title">Password:</span>
+          <span>Name:</span>
+          <input
+            {...register('name', { required: true })}
+            type="text"
+            name="name"
+            className="input"
+          />
+          {errors.name && <span>This field is required</span>}
+        </label>
+        <label className="label">
+          <span>Password:</span>
           <input
             {...register('password', { required: true, minLength: 7 })}
             type="password"
+            name="password"
             className="input"
           />
           {errors.password && <span>This field is required</span>}
         </label>
 
         <button type="submit" className="btn">
-          Sign In
+          Sign Up
         </button>
       </form>
-    </StyledLogin>
+    </StyledRegisterPage>
   );
 };
 
-export default Login;
+export default RegisterPage;

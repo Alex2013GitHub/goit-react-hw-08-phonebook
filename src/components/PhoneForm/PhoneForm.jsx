@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { selectorContacts } from 'redux/contacts/selectors';
 import { addContact } from 'redux/contacts/operations';
+import { selectorContacts } from 'redux/contacts/selectors';
 
-import { StyledPhoneForm } from './StyledPhoneForm.styled';
+import { StyledPhoneForm } from './PhoneForm.styled';
 
 const PhoneForm = () => {
   const dispatch = useDispatch();

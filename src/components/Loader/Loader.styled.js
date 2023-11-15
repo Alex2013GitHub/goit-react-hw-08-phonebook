@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
-export const Container = styled.div`
+export const StyledLoader = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 50px;
 `;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledRegister = styled.div`
+export const StyledRegisterPage = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 80px;

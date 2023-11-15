@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledLogin = styled.div`
+export const StyledLoginPage = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 80px;

@@ -1,15 +1,17 @@
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import Loader from 'components/Loader/Loader';
+import { deleteContact, fetchContacts } from 'redux/contacts/operations';
 import {
   selectorContactsError,
   selectorContactsFilter,
   selectorContactsIsLoading,
 } from 'redux/contacts/selectors';
-import { deleteContact, fetchContacts } from 'redux/contacts/operations';
-import { StyledContacts } from './ContactList.styled';
-import { IconButton } from '@mui/material';
+import Loader from 'components/Loader/Loader';
+
 import DeleteIcon from '@mui/icons-material/Delete';
+
+import { StyledContacts } from './Contacts.styled';
+import { IconButton } from '@mui/material';
 
 const Contacts = () => {
   const dispatch = useDispatch();

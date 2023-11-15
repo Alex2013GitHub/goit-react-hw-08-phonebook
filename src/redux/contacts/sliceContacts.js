@@ -20,17 +20,17 @@ export const contactsSlice = createSlice({
   },
   extraReducers: builder =>
     builder
-
+      // ---------- CONTACTS ----------
       .addCase(fetchContacts.fulfilled, (state, action) => {
         state.contacts.isLoading = false;
         state.contacts.items = action.payload;
       })
-
+      // ---------- ADD CONTACT ----------
       .addCase(addContact.fulfilled, (state, action) => {
         state.contacts.isLoading = false;
         state.contacts.items.unshift(action.payload);
       })
-
+      // ---------- DELETE CONTACT ----------
       .addCase(deleteContact.fulfilled, (state, action) => {
         state.contacts.isLoading = false;
         state.contacts.items = state.contacts.items.filter(

@@ -4,7 +4,7 @@ import {
   loginThunk,
   refreshThunk,
   registerThunk,
-} from './operations';
+} from './authOperations';
 
 const INITIAL_STATE = {
   token: null,
@@ -22,27 +22,27 @@ const authSlice = createSlice({
   initialState: INITIAL_STATE,
   extraReducers: builder =>
     builder
-
+      // ---------- REGISTER USER ----------------
       .addCase(registerThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.authenticated = true;
         state.token = action.payload.token;
         state.user = action.payload.user;
       })
-
+      // ---------- LOGIN USER ----------------
       .addCase(loginThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.authenticated = true;
         state.token = action.payload.token;
         state.user = action.payload.user;
       })
-
+      // ---------- REFRESH USER ----------------
       .addCase(refreshThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.authenticated = true;
         state.user = action.payload;
       })
-
+      // ---------- LOGOUT USER ----------------
       .addCase(logOutThunk.fulfilled, () => {
         return INITIAL_STATE;
       })

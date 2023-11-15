@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledHome = styled.div`
+export const StyledHomePage = styled.div`
   font-weight: 500;
   font-size: 48px;
   text-align: center;

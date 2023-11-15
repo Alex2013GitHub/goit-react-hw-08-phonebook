@@ -1,10 +1,12 @@
+import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectAuthAuthenticated } from 'redux/auth/selectors';
-import { StyledNavigation, StyledNavigationLogin } from './Navigation.styled';
 import { NavLink, Outlet } from 'react-router-dom';
+import { selectAuthAuthenticated } from 'redux/auth/authSelectors';
 import UserMenu from 'components/UserMenu/UserMenu';
 
-const Navigation = () => {
+import { StyledNavigation, StyledNavigationLogin } from './Navigation.styled';
+
+const Header = () => {
   const authenticated = useSelector(selectAuthAuthenticated);
 
   return (
@@ -44,4 +46,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default Header;
