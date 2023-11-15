@@ -1,16 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact, fetchContacts } from 'redux/contactSlice';
-
-import { List, DeleteButton, ListItem } from './ContactList.styled';
 import { useEffect } from 'react';
+import Loader from 'components/Loader/Loader';
 import {
   selectorContactsError,
   selectorContactsFilter,
   selectorContactsIsLoading,
-} from 'redux/contacts/contacts/selector';
-import Loader from 'components/Loader/Loader';
+} from 'redux/contacts/selectors';
+import { deleteContact, fetchContacts } from 'redux/contacts/operations';
+import { StyledContacts } from './ContactList.styled';
+import { IconButton } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
 
-const ContactList = () => {
+const Contacts = () => {
   const dispatch = useDispatch();
 
   const isLoading = useSelector(selectorContactsIsLoading);
@@ -26,25 +27,30 @@ const ContactList = () => {
   };
 
   return (
-    <>
-      <List>
+    <StyledContacts>
+      <ul>
         {filteredContacts.length > 0 ? (
           filteredContacts.map(contact => (
-            <ListItem key={contact.id}>
-              {contact.name}: {contact.phone}
-              <DeleteButton onClick={() => handleDeleteContact(contact.id)}>
-                Delete
-              </DeleteButton>
-            </ListItem>
+            <li key={contact.id} className="item">
+              {contact.name}: {contact.number}
+              <IconButton
+                className="btn_delete"
+                aria-label="delete"
+                onClick={() => handleDeleteContact(contact.id)}
+              >
+                <DeleteIcon />
+              </IconButton>
+            </li>
           ))
         ) : (
           <p>No contacts found</p>
         )}
-      </List>
+      </ul>
+
       {isLoading && <Loader />}
       {error && <p>Oppsss Erorr</p>}
-    </>
+    </StyledContacts>
   );
 };
 
-export default ContactList;
+export default Contacts;

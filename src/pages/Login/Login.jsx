@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import { loginThunk } from 'redux/auth/operations';
 
 const { useDispatch } = require('react-redux');
 const { StyledLogin } = require('./Login.styled');

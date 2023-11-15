@@ -9,8 +9,8 @@ import PrivateRoute from './Routes/PrivateRoutes';
 import Navigation from './Navigation/Navigation';
 
 const Home = lazy(() => import('pages/Home/Home'));
-const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
-const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
+const RegisterPage = lazy(() => import('pages/Register/Register'));
+const LoginPage = lazy(() => import('pages/Login/Login'));
 const ContactsPage = lazy(() => import('pages/ContactsPage/ContactsPage'));
 
 const appRoutes = [

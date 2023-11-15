@@ -1,9 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Label, Input } from './Filter.styled';
-
-import { selectorfilter } from 'redux/contacts/contacts/selector';
-import { setFilter } from 'redux/contactSlice';
+import { selectorfilter } from 'redux/contacts/selectors';
+import { setFilter } from 'redux/contacts/contactsSlice';
+import { StyledFilter } from './Filter.styled';
 
 const Filter = () => {
   const filter = useSelector(selectorfilter);
@@ -14,23 +13,18 @@ const Filter = () => {
   };
 
   return (
-    <Label>
-      <p>Find contacts by name</p>
+    <StyledFilter>
+      <p className="title">Find contacts by name:</p>
       <form>
-        <Input
+        <input
           type="text"
           placeholder="Search contacts"
           value={filter}
           onChange={handleFilterChange}
-          style={{
-            padding: '5px',
-            fontSize: '16px',
-            border: '1px solid #ccc',
-            borderRadius: '4px',
-          }}
+          className="input"
         />
       </form>
-    </Label>
+    </StyledFilter>
   );
 };
 

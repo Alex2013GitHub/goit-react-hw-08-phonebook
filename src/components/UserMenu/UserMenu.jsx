@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { logOutThunk } from 'redux/auth/operations';
-import { selectUserName } from 'redux/contacrs/selectors';
+import { selectUserName } from 'redux/contacts/selectors';
 import { StyledUserMenu } from './UserMenu.styled';
 
 const UserMenu = () => {
