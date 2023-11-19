@@ -4,15 +4,11 @@ export const StyledPhoneForm = styled.div`
   .text {
     text-align: center;
     font-size: 36px;
-    text-decoration: underline;
-    text-decoration-style: double;
   }
 
   .text-white {
     text-align: center;
     font-size: 36px;
-    text-decoration: underline;
-    text-decoration-style: double;
     color: white;
   }
 
@@ -36,7 +32,7 @@ export const StyledPhoneForm = styled.div`
     margin-bottom: 14px;
     padding: 14px 24px;
     outline: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: 100px;
+    border-radius: 10px;
     border: none;
     transition: outline var(--duration-timing-func);
     font-size: 20px;

@@ -8,12 +8,12 @@ import {
 } from 'redux/contacts/selectors';
 import Loader from 'components/Loader/Loader';
 
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 
-import { StyledContacts } from './Contacts.styled';
+import { StyledContacts } from './ContactsCard.styled';
 import { IconButton } from '@mui/material';
 
-const Contacts = () => {
+const ContactsCard = () => {
   const dispatch = useDispatch();
 
   const isLoading = useSelector(selectorContactsIsLoading);
@@ -40,7 +40,7 @@ const Contacts = () => {
                 aria-label="delete"
                 onClick={() => handleDeleteContact(contact.id)}
               >
-                <DeleteIcon />
+                <DeleteOutlinedIcon />
               </IconButton>
             </li>
           ))
@@ -55,4 +55,4 @@ const Contacts = () => {
   );
 };
 
-export default Contacts;
+export default ContactsCard;

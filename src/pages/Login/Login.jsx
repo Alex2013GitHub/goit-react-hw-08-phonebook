@@ -3,9 +3,9 @@ import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { loginThunk } from 'redux/auth/authOperations';
 
-import { StyledLoginPage } from './LoginPage.styled';
+import { StyledLogin } from './Login.styled';
 
-const LoginPage = () => {
+const Login = () => {
   const {
     register,
     handleSubmit,
@@ -20,7 +20,7 @@ const LoginPage = () => {
   };
 
   return (
-    <StyledLoginPage>
+    <StyledLogin>
       <form onSubmit={handleSubmit(onSubmit)} className="form">
         <label className="label">
           <span className="title">Email:</span>
@@ -45,8 +45,8 @@ const LoginPage = () => {
           Sign In
         </button>
       </form>
-    </StyledLoginPage>
+    </StyledLogin>
   );
 };
 
-export default LoginPage;
+export default Login;

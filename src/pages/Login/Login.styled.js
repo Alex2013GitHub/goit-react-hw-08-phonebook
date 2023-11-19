@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledLoginPage = styled.div`
+export const StyledLogin = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 80px;
@@ -24,7 +24,7 @@ export const StyledLoginPage = styled.div`
     margin-bottom: 14px;
     padding: 14px 24px;
     outline: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: 100px;
+    border-radius: 10px;
     border: none;
     transition: outline var(--duration-timing-func);
     font-size: 20px;

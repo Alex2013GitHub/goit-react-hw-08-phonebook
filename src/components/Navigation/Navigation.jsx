@@ -13,7 +13,7 @@ const Header = () => {
     <StyledNavigation>
       <nav className="nav">
         <NavLink to="/login" className="logo">
-          Your<span className="logo_black">Phonebook</span>
+          Phone<span className="logo_black">book</span>
         </NavLink>
 
         {authenticated ? (

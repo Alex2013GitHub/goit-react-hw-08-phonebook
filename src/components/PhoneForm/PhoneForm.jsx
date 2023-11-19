@@ -34,7 +34,7 @@ const PhoneForm = () => {
   return (
     <StyledPhoneForm>
       <h1 className="text">
-        <span className="text-white">Your </span>Phonebook
+        <span className="text-white">Phone</span>book
       </h1>
       <form onSubmit={handleSubmit} className="form">
         <label className="label">

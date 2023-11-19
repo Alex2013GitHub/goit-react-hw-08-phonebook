@@ -4,7 +4,7 @@ export const StyledContainer = styled.div`
   padding: 20px;
   margin-left: auto;
   margin-right: auto;
-  background: linear-gradient(rgb(191 76 77), rgb(131 138 214));
+  background: hwb(138 33% 38% / 0.7);
 
   .appstyled {
     display: flex;
@@ -20,7 +20,5 @@ export const StyledContainer = styled.div`
   .text {
     text-align: center;
     font-size: 36px;
-    text-decoration: underline;
-    text-decoration-style: double;
   }
 `;

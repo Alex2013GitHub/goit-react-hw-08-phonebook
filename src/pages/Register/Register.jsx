@@ -2,10 +2,9 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { registerThunk } from 'redux/auth/authOperations';
+import { StyledRegister } from './Register.styled';
 
-import { StyledRegisterPage } from './RegisterPage.styled';
-
-const RegisterPage = () => {
+const Register = () => {
   const {
     register,
     handleSubmit,
@@ -21,7 +20,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <StyledRegisterPage>
+    <StyledRegister>
       <form onSubmit={handleSubmit(onSubmit)} className="form">
         <label className="label">
           <span>Email:</span>
@@ -58,8 +57,8 @@ const RegisterPage = () => {
           Sign Up
         </button>
       </form>
-    </StyledRegisterPage>
+    </StyledRegister>
   );
 };
 
-export default RegisterPage;
+export default Register;

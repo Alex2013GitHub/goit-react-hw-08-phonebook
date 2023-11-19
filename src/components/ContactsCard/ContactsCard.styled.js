@@ -17,7 +17,7 @@ export const StyledContacts = styled.div`
 
     &:hover,
     &:focus {
-      background-color: red;
+      background-color: rgb(165, 168, 173);
       color: white;
     }
   }

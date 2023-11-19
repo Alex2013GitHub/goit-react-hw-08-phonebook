@@ -17,7 +17,7 @@ width: 300px;
     margin-bottom: 14px;
     padding: 10px 20px;
     outline: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: 100px;
+    border-radius: 10px;
     border: none;
     transition: outline var(--duration-timing-func);
     font-size: 20px;

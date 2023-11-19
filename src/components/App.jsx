@@ -9,18 +9,18 @@ import Navigation from './Navigation/Navigation';
 import Loader from './Loader/Loader';
 import { selectAuthIsLoading } from 'redux/auth/authSelectors';
 
-const HomePage = lazy(() => import('pages/HomePage/HomePage'));
-const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
-const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
-const ContactsPage = lazy(() => import('pages/ContactsPage/ContactsPage'));
+const Home = lazy(() => import('pages/Home/Home'));
+const Register = lazy(() => import('pages/Register/Register'));
+const Login = lazy(() => import('pages/Login/Login'));
+const Contacts = lazy(() => import('pages/Contacts/Contacts'));
 
 const appRoutes = [
-  { path: '/', element: <HomePage /> },
+  { path: '/', element: <Home /> },
   {
     path: '/register',
     element: (
       <RestictedRoute>
-        <RegisterPage />
+        <Register />
       </RestictedRoute>
     ),
   },
@@ -28,7 +28,7 @@ const appRoutes = [
     path: '/login',
     element: (
       <RestictedRoute>
-        <LoginPage />
+        <Login />
       </RestictedRoute>
     ),
   },
@@ -36,7 +36,7 @@ const appRoutes = [
     path: '/contacts',
     element: (
       <PrivateRoute>
-        <ContactsPage />
+        <Contacts />
       </PrivateRoute>
     ),
   },

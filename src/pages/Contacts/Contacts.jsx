@@ -1,20 +1,20 @@
 import PhoneForm from 'components/PhoneForm/PhoneForm';
 import Filter from 'components/Filter/Filter';
-import Contacts from 'components/Contacts/Contacts';
 
-import { StyledContainer } from './ContactsPage.styled';
+import { StyledContainer } from './Contacts.styled';
+import ContactsCard from 'components/ContactsCard/ContactsCard';
 
-const ContactsPage = () => {
+const Contacts = () => {
   return (
     <StyledContainer>
       <div className="appstyled">
         <PhoneForm />
         <h2 className="text">Contacts</h2>
         <Filter />
-        <Contacts />
+        <ContactsCard />
       </div>
     </StyledContainer>
   );
 };
 
-export default ContactsPage;
+export default Contacts;
