@@ -40,6 +40,7 @@ const appRoutes = [
       </PrivateRoute>
     ),
   },
+  { path: '*', element: <Navigate to="/" /> },
 ];
 
 export const App = () => {
@@ -61,7 +62,7 @@ export const App = () => {
               <Route key={path} path={path} element={element} />
             ))}
 
-            <Route path="*" element={<Navigate to="/" />} />
+            <Route />
           </Routes>
         </Suspense>
       )}
